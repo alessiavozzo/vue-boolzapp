@@ -162,13 +162,23 @@ createApp({
                             message: 'OK!!',
                             status: 'received'
                         }
-                    ],
-                }
-            ]
+                    ]
 
+                }
+            ],
+            
+            activeContact: 0,
             
 
 
+        }
+    },
+
+    methods:{
+        changeActiveChat(index){
+            //console.log("Click chat", index);
+            this.activeContact = index;
+            //console.log(this.activeContact, index);
         }
     }
 }).mount('#app')

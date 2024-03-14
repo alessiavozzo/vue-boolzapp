@@ -70,7 +70,7 @@
                     <div class="contact-list col-12">
     
                         <!-- contact1 -->
-                        <div class="contact d-flex" v-for="contact in contactList">
+                        <div class="contact d-flex" v-for="(contact,index) in contactList" @click="changeActiveChat(index)">
                             <div class="contact-pic col-2 col-md-12">
                                 <img :src="contact.avatar" :alt="contact.name">
                             </div>
@@ -95,11 +95,11 @@
     
                         <div class="chat-contact d-flex">
                             <div class="contact-pic">
-                                <img src="./assets/img/avatar_1.jpg" alt="">
+                                <img :src="contactList[activeContact].avatar" alt="">
                             </div>
                             
                             <div class="text d-flex">
-                                <h3>Michele</h3>
+                                <h3>{{contactList[activeContact].name}}</h3>
                                 <span>Ultimo accesso oggi alle 16.26</span>
                             </div>
                         </div>
