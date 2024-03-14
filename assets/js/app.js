@@ -227,8 +227,12 @@ createApp({
             this.contactList[this.activeContact].messages.splice(msgIndex, 1);
         },
 
+        formatMsgTime(time){
+            return DateTime.fromFormat(time, 'dd/MM/yyyy HH:mm:ss').toFormat('HH:mm');
+        },
+
         formatMyMsgTime(){
-            return DateTime.now().toFormat('HH:mm')
+            return DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss');
         }
     },
 
@@ -240,7 +244,7 @@ createApp({
         //this.lastMessage = this.contactList[this.activeContact].messages.length - 1
         //console.log(this.lastMessage);    
         //console.log(this.contactList[0].messages.length - 1);        
-        //console.log(this.contactList[4].messages.length-1);     
+        //console.log(this.contactList[4].messages.length-1);    
        
     }
 }).mount('#app')

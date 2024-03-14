@@ -77,7 +77,7 @@
                             <div class="text d-flex col-10 hide">
                                 <div class="name d-flex">
                                     <h3>{{contact.name}}</h3>
-                                    <span>{{contact.messages.at(-1).date}}</span>
+                                    <span>{{formatMsgTime(contact.messages.at(-1).date)}}</span>
                                 </div>
                                 <p>{{contact.messages.at(-1).message}}</p>
                             </div>
@@ -100,7 +100,7 @@
                             
                             <div class="text d-flex">
                                 <h3>{{contactList[activeContact].name}}</h3>
-                                <span>Ultimo accesso oggi alle 16.26</span>
+                                <span>Ultimo accesso oggi alle {{formatMsgTime(contactList[activeContact].messages.at(-1).date)}}</span>
                             </div>
                         </div>
     
@@ -133,7 +133,7 @@
                                 </div>
     
                                 <span class="time">
-                                    {{contactList[activeContact].messages[msgIndex].date}}
+                                    {{formatMsgTime(contactList[activeContact].messages[msgIndex].date)}}
                                 </span>
                             </div>
     
