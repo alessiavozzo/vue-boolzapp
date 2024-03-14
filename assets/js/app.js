@@ -172,7 +172,7 @@ createApp({
             contactReply: "ok",
             searchInput: null,
             appear: false,
-            appearIndex: null,
+            
         }
     },
 
@@ -223,14 +223,18 @@ createApp({
             //console.log("delete");
             //console.log(this.contactList[this.activeContact].messages[msgIndex]);
             this.contactList[this.activeContact].messages.splice(msgIndex, 1);
-            
-        }
+        },
     },
 
 
     mounted(){
         //console.log(this.contactList[0].messages[0].message);
         //console.log(this.contactList[0].messages[0].status === "sent");    
-        //console.log(this.contactList[this.activeContact].name.includes(this.searchInput));            
+        //console.log(this.contactList[this.activeContact].name.includes(this.searchInput));
+        //this.lastMessage = this.contactList[this.activeContact].messages.length - 1
+        //console.log(this.lastMessage);    
+        //console.log(this.contactList[0].messages.length - 1);        
+        //console.log(this.contactList[4].messages.length-1);       
+       
     }
 }).mount('#app')
