@@ -70,116 +70,19 @@
                     <div class="contact-list col-12">
     
                         <!-- contact1 -->
-                        <div class="contact d-flex">
+                        <div class="contact d-flex" v-for="contact in contactList">
                             <div class="contact-pic col-2 col-md-12">
-                                <img src="./assets/img/avatar_1.jpg" alt="">
+                                <img :src="contact.avatar" :alt="contact.name">
                             </div>
                             <div class="text d-flex col-10 hide">
                                 <div class="name d-flex">
-                                    <h3>Michele</h3>
+                                    <h3>{{contact.name}}</h3>
                                     <span>16.15</span>
                                 </div>
                                 <p>Lorem ipsum dolor sit amet.</p>
                             </div>
-                        </div>
-    
-                        <!-- contact2 -->
-                        <div class="contact d-flex">
-                            <div class="contact-pic col-2 col-md-12">
-                                <img src="./assets/img/avatar_2.jpg" alt="">
-                            </div>
-                            <div class="text d-flex col-10 hide">
-                                <div class="name d-flex">
-                                    <h3>Fabio</h3>
-                                    <span>16.15</span>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
-    
-                        <!-- contact3 -->
-                        <div class="contact d-flex">
-                            <div class="contact-pic col-2 col-md-12">
-                                <img src="./assets/img/avatar_3.jpg" alt="">
-                            </div>
-                            <div class="text d-flex col-10 hide">
-                                <div class="name d-flex">
-                                    <h3>Samuele</h3>
-                                    <span>16.15</span>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
-    
-                        <!-- contact4 -->
-                        <div class="contact d-flex">
-                            <div class="contact-pic col-2 col-md-12">
-                                <img src="./assets/img/avatar_4.jpg" alt="">
-                            </div>
-                            <div class="text d-flex col-10 hide">
-                                <div class="name d-flex">
-                                    <h3>Alessandro B.</h3>
-                                    <span>16.15</span>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
-    
-                        <!-- contact5 -->
-                        <div class="contact d-flex">
-                            <div class="contact-pic col-2 col-md-12">
-                                <img src="./assets/img/avatar_5.jpg" alt="">
-                            </div>
-                            <div class="text d-flex col-10 hide">
-                                <div class="name d-flex">
-                                    <h3>Alessandro L.</h3>
-                                    <span>16.15</span>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
-    
-                        <!-- contact6 -->
-                        <div class="contact d-flex">
-                            <div class="contact-pic col-2 col-md-12">
-                                <img src="./assets/img/avatar_6.jpg" alt="">
-                            </div>
-                            <div class="text d-flex col-10 hide">
-                                <div class="name d-flex">
-                                    <h3>Jessica</h3>
-                                    <span>16.15</span>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
-    
-                        <!-- contact7 -->
-                        <div class="contact d-flex">
-                            <div class="contact-pic col-2 col-md-12">
-                                <img src="./assets/img/avatar_7.jpg" alt="">
-                            </div>
-                            <div class="text d-flex col-10 hide">
-                                <div class="name d-flex">
-                                    <h3>Paolo</h3>
-                                    <span>16.15</span>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
-    
-                        <!-- contact8 -->
-                        <div class="contact d-flex">
-                            <div class="contact-pic col-2 col-md-12">
-                                <img src="./assets/img/avatar_8.jpg" alt="">
-                            </div>
-                            <div class="text d-flex col-10 hide">
-                                <div class="name d-flex">
-                                    <h3>Martino</h3>
-                                    <span>16.15</span>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
+                        </div>   
+                        
     
                     </div>
     
