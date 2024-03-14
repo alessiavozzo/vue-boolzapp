@@ -121,10 +121,10 @@
                                     {{contactList[activeContact].messages[msgIndex].message}}
                                 </p>
     
-                                <div class="chevron col-1">
+                                <div class="chevron col-1" @click="dropMenuAppear(singleMessage)">
                                     <i class="fa-solid fa-chevron-down"></i>
                                     <!-- dropdown menu -->
-                                    <div class="drop">
+                                    <div v-if="singleMessage.appear" class="drop">
                                         <ul>
                                             <li>Info messaggio</li>
                                             <li>Cancella messaggio</li>

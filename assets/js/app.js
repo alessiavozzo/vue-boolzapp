@@ -171,6 +171,8 @@ createApp({
             myMessage: null,
             contactReply: "ok",
             searchInput: null,
+            appear: false,
+            appearIndex: null,
         }
     },
 
@@ -209,13 +211,18 @@ createApp({
                     contact.visible = false
                 }
             });
-        }
+        },
+
+        dropMenuAppear(singleMessage){ 
+            //console.log(singleMessage); 
+            singleMessage.appear = !singleMessage.appear
+        },
     },
 
 
     mounted(){
         //console.log(this.contactList[0].messages[0].message);
         //console.log(this.contactList[0].messages[0].status === "sent");    
-        //console.log(this.contactList[this.activeContact].name.includes(this.searchInput));    
+        //console.log(this.contactList[this.activeContact].name.includes(this.searchInput));            
     }
 }).mount('#app')

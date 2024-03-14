@@ -100,6 +100,9 @@ body{
 .d-none{
     display: none;
 }
+.d-block{
+    display: block;
+}
 
 .col-12{
     width: 100%;
@@ -463,10 +466,10 @@ body{
             cursor: pointer;
         }
 
-        &:hover .drop{
+        /* &:hover .drop{
             display: block;
             cursor: pointer;
-        }
+        } */
     }
 
     & .drop{
@@ -481,7 +484,7 @@ body{
         font-size: 1rem;
         z-index: 5;
         box-shadow: 0 0 7px 0 var(--bool-text);
-        display: none;
+        
     }       
     
 
