@@ -169,8 +169,7 @@ createApp({
             
             activeContact: 0,          
             myMessage: null,
-
-
+            contactReply: "ok",
         }
     },
 
@@ -188,13 +187,21 @@ createApp({
                 status: 'sent'
             });
             this.myMessage ="";
+            setTimeout(this.autoContactReply, 1000);
+        },
+
+        autoContactReply(){
+            this.contactList[this.activeContact].messages.push({
+                date: '10/01/2020 15:51:00',
+                message: this.contactReply,
+                status: 'received'
+            });            
         }
     },
 
 
     mounted(){
         //console.log(this.contactList[0].messages[0].message);
-        //console.log(this.contactList[0].messages[0].status === "sent");
-        
+        //console.log(this.contactList[0].messages[0].status === "sent");        
     }
 }).mount('#app')
