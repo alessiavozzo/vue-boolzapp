@@ -174,6 +174,7 @@ createApp({
             contactReply: "ok",
             searchInput: null,
             appear: false,
+            errorMessage: null,
             
         }
     },
@@ -186,18 +187,27 @@ createApp({
         },
 
         sendMessage(){
-            this.contactList[this.activeContact].messages.push({
-                date: this.formatMyMsgTime(),
-                message: this.myMessage,
-                status: 'sent'
-            });
-            this.myMessage ="";
-            setTimeout(this.autoContactReply, 1000);
+            if (this.myMessage.trim().length > 0) {
+                this.contactList[this.activeContact].messages.push({
+                    date: this.updateMsgTime(),
+                    message: this.myMessage,
+                    status: 'sent'
+                });
+                this.myMessage ="";
+                setTimeout(this.autoContactReply, 1000);                
+            }
+            else{
+                //console.log("non puoi mandare un msg vuoto");
+                this.errorMessage = "Non puoi inviare un messaggio vuoto"
+                setTimeout(() => {
+                    this.errorMessage = null;
+                }, 1500);
+            }
         },
 
         autoContactReply(){
             this.contactList[this.activeContact].messages.push({
-                date: this.formatMyMsgTime(),
+                date: this.updateMsgTime(),
                 message: this.contactReply,
                 status: 'received'
             });            
@@ -231,7 +241,7 @@ createApp({
             return DateTime.fromFormat(time, 'dd/MM/yyyy HH:mm:ss').toFormat('HH:mm');
         },
 
-        formatMyMsgTime(){
+        updateMsgTime(){
             return DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss');
         }
     },

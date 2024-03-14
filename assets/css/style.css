@@ -513,6 +513,7 @@ body{
     padding: 0.8rem;
     align-items: center;
     height: 80px;
+    position: relative;
 
     & > i{
         font-size: 1.8rem;
@@ -533,6 +534,17 @@ body{
         &:focus{
             outline: none;
         }
+    }
+
+    >.error-message{
+        position: absolute;
+        display: block;
+        width: 30%;
+        text-align: center;
+        border: 2px solid var(--bool-bg-dark);
+        border-radius: 1.5rem;
+        padding: 1rem;
+        background-color: var(--bool-lighter);
     }
 }
 

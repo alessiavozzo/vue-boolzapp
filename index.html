@@ -149,6 +149,7 @@
                     <div class="bottom-bar d-flex">
                         <i class="fa-regular fa-face-smile col-1"></i>
                         <input type="text" class="col-10 col-sm-12" placeholder="Scrivi un messaggio" v-model="myMessage" @keyup.enter="sendMessage()">
+                        <span class="error-message" v-if="errorMessage">{{errorMessage}}</span>
                         <i class="fa-solid fa-microphone col-1"></i>
                     </div>
     
