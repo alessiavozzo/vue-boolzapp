@@ -168,7 +168,7 @@ createApp({
             ],
             
             activeContact: 0,          
-            
+            myMessage: null,
 
 
         }
@@ -180,11 +180,21 @@ createApp({
             this.activeContact = index;            
             //console.log(this.activeContact, index);
         },
+
+        sendMessage(){
+            this.contactList[this.activeContact].messages.push({
+                date: '10/01/2020 15:51:00',
+                message: this.myMessage,
+                status: 'sent'
+            });
+            this.myMessage ="";
+        }
     },
 
 
     mounted(){
         //console.log(this.contactList[0].messages[0].message);
         //console.log(this.contactList[0].messages[0].status === "sent");
+        
     }
 }).mount('#app')
