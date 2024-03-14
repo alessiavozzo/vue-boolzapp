@@ -217,6 +217,14 @@ createApp({
             //console.log(singleMessage); 
             singleMessage.appear = !singleMessage.appear
         },
+
+        deleteMessage(msgIndex){
+            //console.log(msgIndex);
+            //console.log("delete");
+            //console.log(this.contactList[this.activeContact].messages[msgIndex]);
+            this.contactList[this.activeContact].messages.splice(msgIndex, 1);
+            
+        }
     },
 
 

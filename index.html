@@ -127,7 +127,7 @@
                                     <div v-if="singleMessage.appear" class="drop">
                                         <ul>
                                             <li>Info messaggio</li>
-                                            <li>Cancella messaggio</li>
+                                            <li @click="deleteMessage(msgIndex)">Cancella messaggio</li>
                                         </ul>
                                     </div>
                                 </div>

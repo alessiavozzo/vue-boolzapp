@@ -475,7 +475,7 @@ body{
     & .drop{
         position: absolute;
         width: 12rem;
-        top: 30%;
+        top: 100%;
         right: 0;
         background-color: var(--bool-lighter);
         padding: 0.5rem;
