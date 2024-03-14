@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzapp</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="app-container">
+            <div id="app" class="row">
+    
+                <!-- sidebar -->
+                <div id="sidebar" class="d-flex col-4">
+    
+                    <!-- sidebar header -->
+                    <div class="side-header row col-12">
+                        <div class="user col-md-12">
+                            <img src="./assets/img/avatar_io.jpg" alt="profile-pic">
+                        </div>
+                        <div class="action d-flex hide">
+                            <i class="fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+    
+                    <!-- sidebar notifications blue -->
+                    <div class="notifications d-flex col-12 hide">
+                        
+                        <div class="alert">
+                            <i class="fa-solid fa-bell-slash"></i>
+                        </div>                    
+                        
+                        <div class="text d-flex col-10">
+                            <span>
+                                <strong>
+                                    Ricevi notifiche di nuovi messaggi
+                                </strong>
+                            </span>
+    
+                            <a href="#">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
+    
+                    <!-- searchbar -->
+                    <div class="search-bar col-12 hide">
+                        <div class="search d-flex">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-arrow-down"></i>
+                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                    </div>
+    
+                    <!-- contact list -->
+                    <div class="contact-list col-12">
+    
+                        <!-- contact1 -->
+                        <div class="contact d-flex">
+                            <div class="contact-pic col-2 col-md-12">
+                                <img src="./assets/img/avatar_1.jpg" alt="">
+                            </div>
+                            <div class="text d-flex col-10 hide">
+                                <div class="name d-flex">
+                                    <h3>Michele</h3>
+                                    <span>16.15</span>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </div>
+    
+                        <!-- contact2 -->
+                        <div class="contact d-flex">
+                            <div class="contact-pic col-2 col-md-12">
+                                <img src="./assets/img/avatar_2.jpg" alt="">
+                            </div>
+                            <div class="text d-flex col-10 hide">
+                                <div class="name d-flex">
+                                    <h3>Fabio</h3>
+                                    <span>16.15</span>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </div>
+    
+                        <!-- contact3 -->
+                        <div class="contact d-flex">
+                            <div class="contact-pic col-2 col-md-12">
+                                <img src="./assets/img/avatar_3.jpg" alt="">
+                            </div>
+                            <div class="text d-flex col-10 hide">
+                                <div class="name d-flex">
+                                    <h3>Samuele</h3>
+                                    <span>16.15</span>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </div>
+    
+                        <!-- contact4 -->
+                        <div class="contact d-flex">
+                            <div class="contact-pic col-2 col-md-12">
+                                <img src="./assets/img/avatar_4.jpg" alt="">
+                            </div>
+                            <div class="text d-flex col-10 hide">
+                                <div class="name d-flex">
+                                    <h3>Alessandro B.</h3>
+                                    <span>16.15</span>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </div>
+    
+                        <!-- contact5 -->
+                        <div class="contact d-flex">
+                            <div class="contact-pic col-2 col-md-12">
+                                <img src="./assets/img/avatar_5.jpg" alt="">
+                            </div>
+                            <div class="text d-flex col-10 hide">
+                                <div class="name d-flex">
+                                    <h3>Alessandro L.</h3>
+                                    <span>16.15</span>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </div>
+    
+                        <!-- contact6 -->
+                        <div class="contact d-flex">
+                            <div class="contact-pic col-2 col-md-12">
+                                <img src="./assets/img/avatar_6.jpg" alt="">
+                            </div>
+                            <div class="text d-flex col-10 hide">
+                                <div class="name d-flex">
+                                    <h3>Jessica</h3>
+                                    <span>16.15</span>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </div>
+    
+                        <!-- contact7 -->
+                        <div class="contact d-flex">
+                            <div class="contact-pic col-2 col-md-12">
+                                <img src="./assets/img/avatar_7.jpg" alt="">
+                            </div>
+                            <div class="text d-flex col-10 hide">
+                                <div class="name d-flex">
+                                    <h3>Paolo</h3>
+                                    <span>16.15</span>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </div>
+    
+                        <!-- contact8 -->
+                        <div class="contact d-flex">
+                            <div class="contact-pic col-2 col-md-12">
+                                <img src="./assets/img/avatar_8.jpg" alt="">
+                            </div>
+                            <div class="text d-flex col-10 hide">
+                                <div class="name d-flex">
+                                    <h3>Martino</h3>
+                                    <span>16.15</span>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </div>
+    
+                    </div>
+    
+                </div>
+                    
+                <div id="main-app" class="col-8 col-sm-12">
+                    
+                    <!-- topbar -->
+                    <div class="top-bar d-flex">
+    
+                        <div class="chat-contact d-flex">
+                            <div class="contact-pic">
+                                <img src="./assets/img/avatar_1.jpg" alt="">
+                            </div>
+                            
+                            <div class="text d-flex">
+                                <h3>Michele</h3>
+                                <span>Ultimo accesso oggi alle 16.26</span>
+                            </div>
+                        </div>
+    
+                        <div class="top-action d-flex">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+    
+                    </div>
+    
+                    <!-- chat -->
+                    <div class="chat">
+                        <div class="msg row">
+    
+                            <div class="my-msg d-flex col-8 col-sm-9">
+                                <p class="col-11">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum voluptate rem officiis a cum error quam eligendi, accusamus mollitia, maiores consequatur modi cupiditate suscipit. Eos itaque officia optio consequuntur officiis?
+                                </p>
+    
+                                <div class="chevron col-1">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                    <!-- dropdown menu -->
+                                    <div class="drop">
+                                        <ul>
+                                            <li>Info messaggio</li>
+                                            <li>Cancella messaggio</li>
+                                        </ul>
+                                    </div>
+                                </div>
+    
+                                <span class="time">
+                                    16.13
+                                </span>
+                            </div>
+    
+                            <div class="contact-msg d-flex col-8 col-sm-9">
+                                <p class="col-11">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum voluptate rem officiis a cum error quam eligendi, accusamus mollitia, maiores consequatur modi cupiditate suscipit. Eos itaque officia optio consequuntur officiis?
+                                </p>
+    
+                                <div class="chevron col-1">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                    <!-- dropdown menu -->
+                                    <div class="drop">
+                                        <ul>
+                                            <li>Info messaggio</li>
+                                            <li>Cancella messaggio</li>
+                                        </ul>
+                                    </div>
+                                </div>
+    
+                                <span class="time">
+                                    16.13
+                                </span>
+                            </div>
+    
+                            <div class="my-msg d-flex col-8 col-sm-9">
+                                <p class="col-11">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum voluptate rem officiis a cum error quam eligendi, accusamus mollitia, maiores consequatur modi cupiditate suscipit. Eos itaque officia optio consequuntur officiis?
+                                </p>
+    
+                                <div class="chevron col-1">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                    <!-- dropdown menu -->
+                                    <div class="drop">
+                                        <ul>
+                                            <li>Info messaggio</li>
+                                            <li>Cancella messaggio</li>
+                                        </ul>
+                                    </div>
+                                </div>
+    
+                                <span class="time">
+                                    16.13
+                                </span>
+                            </div>
+    
+                            <div class="contact-msg d-flex col-8 col-sm-9">
+                                <p class="col-11">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum voluptate rem officiis a cum error quam eligendi, accusamus mollitia, maiores consequatur modi cupiditate suscipit. Eos itaque officia optio consequuntur officiis?
+                                </p>
+    
+                                <div class="chevron col-1">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                    <!-- dropdown menu -->
+                                    <div class="drop">
+                                        <ul>
+                                            <li>Info messaggio</li>
+                                            <li>Cancella messaggio</li>
+                                        </ul>
+                                    </div>
+                                </div>
+    
+                                <span class="time">
+                                    16.13
+                                </span>
+                            </div>
+    
+                            <div class="my-msg d-flex col-8 col-sm-9">
+                                <p class="col-11">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum voluptate rem officiis a cum error quam eligendi, accusamus mollitia, maiores consequatur modi cupiditate suscipit. Eos itaque officia optio consequuntur officiis?
+                                </p>
+    
+                                <div class="chevron col-1">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                    <!-- dropdown menu -->
+                                    <div class="drop">
+                                        <ul>
+                                            <li>Info messaggio</li>
+                                            <li>Cancella messaggio</li>
+                                        </ul>
+                                    </div>
+                                </div>
+    
+                                <span class="time">
+                                    16.13
+                                </span>
+                            </div>
+    
+                            <div class="contact-msg d-flex col-8 col-sm-9">
+                                <p class="col-11">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum voluptate rem officiis a cum error quam eligendi, accusamus mollitia, maiores consequatur modi cupiditate suscipit. Eos itaque officia optio consequuntur officiis?
+                                </p>
+    
+                                <div class="chevron col-1">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                    <!-- dropdown menu -->
+                                    <div class="drop">
+                                        <ul>
+                                            <li>Info messaggio</li>
+                                            <li>Cancella messaggio</li>
+                                        </ul>
+                                    </div>
+                                </div>
+    
+                                <span class="time">
+                                    16.13
+                                </span>
+                            </div>
+    
+                            
+    
+                        </div>
+                    </div>
+    
+                    <!-- bottom-bar-->
+    
+                    <div class="bottom-bar d-flex">
+                        <i class="fa-regular fa-face-smile col-1"></i>
+                        <input type="text" class="col-10 col-sm-12" placeholder="Scrivi un messaggio">
+                        <i class="fa-solid fa-microphone col-1"></i>
+                    </div>
+    
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+    <!-- script -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/app.js"></script>
+
+</body>
+
+</html>
