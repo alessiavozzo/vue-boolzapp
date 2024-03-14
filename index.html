@@ -77,9 +77,9 @@
                             <div class="text d-flex col-10 hide">
                                 <div class="name d-flex">
                                     <h3>{{contact.name}}</h3>
-                                    <span>16.15</span>
+                                    <span>{{contact.messages.at(-1).date}}</span>
                                 </div>
-                                <p>{{contactList[index].messages.at(-1).message}}</p>
+                                <p>{{contact.messages.at(-1).message}}</p>
                             </div>
                         </div>   
                         
@@ -133,7 +133,7 @@
                                 </div>
     
                                 <span class="time">
-                                    16.13
+                                    {{contactList[activeContact].messages[msgIndex].date}}
                                 </span>
                             </div>
     
@@ -164,6 +164,7 @@
 
     <!-- script -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <script src="./assets/js/app.js"></script>
 
 </body>

@@ -1,3 +1,5 @@
+const DateTime = luxon.DateTime;
+
 const { createApp } = Vue
 
 createApp({
@@ -185,7 +187,7 @@ createApp({
 
         sendMessage(){
             this.contactList[this.activeContact].messages.push({
-                date: '10/01/2020 15:51:00',
+                date: this.formatMyMsgTime(),
                 message: this.myMessage,
                 status: 'sent'
             });
@@ -195,7 +197,7 @@ createApp({
 
         autoContactReply(){
             this.contactList[this.activeContact].messages.push({
-                date: '10/01/2020 15:51:00',
+                date: this.formatMyMsgTime(),
                 message: this.contactReply,
                 status: 'received'
             });            
@@ -224,6 +226,10 @@ createApp({
             //console.log(this.contactList[this.activeContact].messages[msgIndex]);
             this.contactList[this.activeContact].messages.splice(msgIndex, 1);
         },
+
+        formatMyMsgTime(){
+            return DateTime.now().toFormat('HH:mm')
+        }
     },
 
 
@@ -234,7 +240,7 @@ createApp({
         //this.lastMessage = this.contactList[this.activeContact].messages.length - 1
         //console.log(this.lastMessage);    
         //console.log(this.contactList[0].messages.length - 1);        
-        //console.log(this.contactList[4].messages.length-1);       
+        //console.log(this.contactList[4].messages.length-1);     
        
     }
 }).mount('#app')
