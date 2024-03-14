@@ -116,9 +116,9 @@
                     <div class="chat">
                         <div class="msg row">
     
-                            <div class="my-msg d-flex col-8 col-sm-9">
+                            <div class="d-flex col-8 col-sm-9" v-for="(singleMessage, msgIndex) in contactList[activeContact].messages" :class="contactList[activeContact].messages[msgIndex].status === 'received' ? 'contact-msg' : 'my-msg'">
                                 <p class="col-11">
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum voluptate rem officiis a cum error quam eligendi, accusamus mollitia, maiores consequatur modi cupiditate suscipit. Eos itaque officia optio consequuntur officiis?
+                                    {{contactList[activeContact].messages[msgIndex].message}}
                                 </p>
     
                                 <div class="chevron col-1">
@@ -137,110 +137,7 @@
                                 </span>
                             </div>
     
-                            <div class="contact-msg d-flex col-8 col-sm-9">
-                                <p class="col-11">
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum voluptate rem officiis a cum error quam eligendi, accusamus mollitia, maiores consequatur modi cupiditate suscipit. Eos itaque officia optio consequuntur officiis?
-                                </p>
-    
-                                <div class="chevron col-1">
-                                    <i class="fa-solid fa-chevron-down"></i>
-                                    <!-- dropdown menu -->
-                                    <div class="drop">
-                                        <ul>
-                                            <li>Info messaggio</li>
-                                            <li>Cancella messaggio</li>
-                                        </ul>
-                                    </div>
-                                </div>
-    
-                                <span class="time">
-                                    16.13
-                                </span>
-                            </div>
-    
-                            <div class="my-msg d-flex col-8 col-sm-9">
-                                <p class="col-11">
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum voluptate rem officiis a cum error quam eligendi, accusamus mollitia, maiores consequatur modi cupiditate suscipit. Eos itaque officia optio consequuntur officiis?
-                                </p>
-    
-                                <div class="chevron col-1">
-                                    <i class="fa-solid fa-chevron-down"></i>
-                                    <!-- dropdown menu -->
-                                    <div class="drop">
-                                        <ul>
-                                            <li>Info messaggio</li>
-                                            <li>Cancella messaggio</li>
-                                        </ul>
-                                    </div>
-                                </div>
-    
-                                <span class="time">
-                                    16.13
-                                </span>
-                            </div>
-    
-                            <div class="contact-msg d-flex col-8 col-sm-9">
-                                <p class="col-11">
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum voluptate rem officiis a cum error quam eligendi, accusamus mollitia, maiores consequatur modi cupiditate suscipit. Eos itaque officia optio consequuntur officiis?
-                                </p>
-    
-                                <div class="chevron col-1">
-                                    <i class="fa-solid fa-chevron-down"></i>
-                                    <!-- dropdown menu -->
-                                    <div class="drop">
-                                        <ul>
-                                            <li>Info messaggio</li>
-                                            <li>Cancella messaggio</li>
-                                        </ul>
-                                    </div>
-                                </div>
-    
-                                <span class="time">
-                                    16.13
-                                </span>
-                            </div>
-    
-                            <div class="my-msg d-flex col-8 col-sm-9">
-                                <p class="col-11">
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum voluptate rem officiis a cum error quam eligendi, accusamus mollitia, maiores consequatur modi cupiditate suscipit. Eos itaque officia optio consequuntur officiis?
-                                </p>
-    
-                                <div class="chevron col-1">
-                                    <i class="fa-solid fa-chevron-down"></i>
-                                    <!-- dropdown menu -->
-                                    <div class="drop">
-                                        <ul>
-                                            <li>Info messaggio</li>
-                                            <li>Cancella messaggio</li>
-                                        </ul>
-                                    </div>
-                                </div>
-    
-                                <span class="time">
-                                    16.13
-                                </span>
-                            </div>
-    
-                            <div class="contact-msg d-flex col-8 col-sm-9">
-                                <p class="col-11">
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum voluptate rem officiis a cum error quam eligendi, accusamus mollitia, maiores consequatur modi cupiditate suscipit. Eos itaque officia optio consequuntur officiis?
-                                </p>
-    
-                                <div class="chevron col-1">
-                                    <i class="fa-solid fa-chevron-down"></i>
-                                    <!-- dropdown menu -->
-                                    <div class="drop">
-                                        <ul>
-                                            <li>Info messaggio</li>
-                                            <li>Cancella messaggio</li>
-                                        </ul>
-                                    </div>
-                                </div>
-    
-                                <span class="time">
-                                    16.13
-                                </span>
-                            </div>
+                            
     
                             
     

@@ -167,7 +167,7 @@ createApp({
                 }
             ],
             
-            activeContact: 0,
+            activeContact: 0,          
             
 
 
@@ -177,8 +177,14 @@ createApp({
     methods:{
         changeActiveChat(index){
             //console.log("Click chat", index);
-            this.activeContact = index;
+            this.activeContact = index;            
             //console.log(this.activeContact, index);
-        }
+        },
+    },
+
+
+    mounted(){
+        //console.log(this.contactList[0].messages[0].message);
+        //console.log(this.contactList[0].messages[0].status === "sent");
     }
 }).mount('#app')
