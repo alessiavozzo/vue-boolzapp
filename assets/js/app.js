@@ -170,6 +170,7 @@ createApp({
             activeContact: 0,          
             myMessage: null,
             contactReply: "ok",
+            searchInput: null,
         }
     },
 
@@ -196,12 +197,25 @@ createApp({
                 message: this.contactReply,
                 status: 'received'
             });            
+        },
+
+        searchContact(){
+            this.contactList.forEach(contact => {
+                if(contact.name.includes(this.searchInput)){
+                    contact.visible = true
+                    console.log(contact.visible);
+                }
+                else{
+                    contact.visible = false
+                }
+            });
         }
     },
 
 
     mounted(){
         //console.log(this.contactList[0].messages[0].message);
-        //console.log(this.contactList[0].messages[0].status === "sent");        
+        //console.log(this.contactList[0].messages[0].status === "sent");    
+        //console.log(this.contactList[this.activeContact].name.includes(this.searchInput));    
     }
 }).mount('#app')

@@ -62,7 +62,7 @@
                         <div class="search d-flex">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <i class="fa-solid fa-arrow-down"></i>
-                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchInput" @keyup.enter="searchContact()">
                         </div>
                     </div>
     
@@ -70,7 +70,7 @@
                     <div class="contact-list col-12">
     
                         <!-- contact1 -->
-                        <div class="contact d-flex" v-for="(contact,index) in contactList" @click="changeActiveChat(index)">
+                        <div class="contact" v-for="(contact,index) in contactList" @click="changeActiveChat(index)" :class="contact.visible === false ? 'd-none' : 'd-flex'">
                             <div class="contact-pic col-2 col-md-12">
                                 <img :src="contact.avatar" :alt="contact.name">
                             </div>

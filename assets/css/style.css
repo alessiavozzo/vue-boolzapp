@@ -97,6 +97,10 @@ body{
     display: flex;
 }
 
+.d-none{
+    display: none;
+}
+
 .col-12{
     width: 100%;
 }
