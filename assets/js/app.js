@@ -13,15 +13,20 @@ createApp({
             contactReply: "ok",
             searchInput: null,
             appear: false,
-            errorMessage: null,            
+            errorMessage: null,         
         }
     },
 
     methods:{
-        changeActiveChat(index){
+        changeActiveChat(contact, index){
             //console.log("Click chat", index);
             this.activeContact = index;            
             //console.log(this.activeContact, index);
+            contact.messages.forEach(message=>{
+                if (message.appear) {
+                    delete message.appear;
+                }
+            })
         },
 
         sendMessage(){
@@ -63,16 +68,24 @@ createApp({
             });
         },
 
-        dropMenuAppear(singleMessage){ 
+        dropMenuAppear(singleMessage, msgIndex){ 
             //console.log(singleMessage); 
-            singleMessage.appear = !singleMessage.appear
+            this.contactList[this.activeContact].messages.forEach((message,index)=> {
+                //console.log(singleMessage, msgIndex, index);                
+                if (message.appear && msgIndex !== index) {
+                    delete message.appear;
+                }
+            })
+            singleMessage.appear = !singleMessage.appear;
         },
 
-        deleteMessage(msgIndex){
+        deleteMessage(singleMessage, msgIndex){
             //console.log(msgIndex);
             //console.log("delete");
             //console.log(this.contactList[this.activeContact].messages[msgIndex]);
+
             this.contactList[this.activeContact].messages.splice(msgIndex, 1);
+                
         },
 
         formatMsgTime(time){
@@ -91,7 +104,9 @@ createApp({
         //this.lastMessage = this.contactList[this.activeContact].messages.length - 1
         //console.log(this.lastMessage);    
         //console.log(this.contactList[0].messages.length - 1);        
-        //console.log(this.contactList[4].messages.length-1);    
+        //console.log(this.contactList[4].messages.length-1); 
+        //console.log(this.contactList);
+          
        
     }
 }).mount('#app')

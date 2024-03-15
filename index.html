@@ -70,7 +70,7 @@
                     <div class="contact-list col-12">
     
                         <!-- contact1 -->
-                        <div class="contact" v-for="(contact,index) in contactList" @click="changeActiveChat(index)" :class="contact.visible === false ? 'd-none' : 'd-flex'">
+                        <div class="contact" v-for="(contact,index) in contactList" @click="changeActiveChat(contact, index)" :class="contact.visible === false ? 'd-none' : 'd-flex'">
                             <div class="contact-pic col-2 col-md-12">
                                 <img :src="contact.avatar" :alt="contact.name">
                             </div>
@@ -121,17 +121,17 @@
                                     {{contactList[activeContact].messages[msgIndex].message}}
                                 </p>
     
-                                <div class="chevron col-1" @click="dropMenuAppear(singleMessage)">
-                                    <i class="fa-solid fa-chevron-down"></i>
+                                <div class="chevron col-1">
+                                    <i class="fa-solid fa-chevron-down"  @click="dropMenuAppear(singleMessage, msgIndex)"></i>
                                     <!-- dropdown menu -->
                                     <div v-if="singleMessage.appear" class="drop">
                                         <ul>
                                             <li>Info messaggio</li>
-                                            <li @click="deleteMessage(msgIndex)">Cancella messaggio</li>
+                                            <li @click="deleteMessage(singleMessage, msgIndex)">Cancella messaggio</li>
                                         </ul>
                                     </div>
-                                </div>
-    
+                                </div>                                
+                                
                                 <span class="time">
                                     {{formatMsgTime(contactList[activeContact].messages[msgIndex].date)}}
                                 </span>
