@@ -12,13 +12,13 @@ createApp({
             autoReplies: autoReplies,
             contactList: contactList,
             activeContact: 0,
-            myMessage: null,
+            myMessage: "",
             contactReply: "",
             searchInput: null,
             appear: false,
             errorMessage: null,
-            onlineMessage: null,
             randomNumber: null,
+            typingMsg: false,
         }
     },
 
@@ -49,6 +49,7 @@ createApp({
                     this.errorMessage = null;
                 }, 1500);
             }
+            this.typingMessage()
         },
 
         autoContactReply() {
@@ -83,7 +84,6 @@ createApp({
 
         deleteMessage(msgIndex) {
             this.contactList[this.activeContact].messages.splice(msgIndex, 1);
-            console.log(msgIndex);
         },
 
         formatMsgTime(time) {
@@ -92,10 +92,15 @@ createApp({
 
         updateMsgTime() {
             return DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss');
+        },
+
+        typingMessage(){ 
+            this.myMessage !== "" ? this.typingMsg = true : this.typingMsg = false  
         }
+
     },
 
     mounted() {
-
+        //console.log(this.myMessage.length)
     }
 }).mount('#app')

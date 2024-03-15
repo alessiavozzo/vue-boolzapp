@@ -5,7 +5,7 @@ export const autoReplies =[
     "ti saluta la nonna",
     "usciamo oggi?",
     "ho sonno, vado a dormire",
-    "ho le febbre",
+    "ho la febbre",
     "ti va il pollo stasera?",
     "prova a dire 'tre tigri contro tre tigri'",
     "prova a dire 'li vuoi quei kiwi?' per 5 volte",
