@@ -20,7 +20,8 @@ createApp({
             randomNumber: null,
             typingMsg: false,
             isTypingStatus: false,
-            onlineStatus: false
+            onlineStatus: false,
+            dropDelete: false,
         }
     },
 
@@ -31,6 +32,9 @@ createApp({
             contact.messages.forEach(message => {
                 if (message.appear) {
                     delete message.appear;
+                }
+                if (this.appear){
+                    this.appear = false;
                 }
             })
         },
@@ -98,6 +102,9 @@ createApp({
                 if (message.appear && msgIndex !== index) {
                     delete message.appear;
                 }
+                if (this.appear){
+                    this.appear = false;
+                }
             })
             singleMessage.appear = !singleMessage.appear;
         },
@@ -115,12 +122,32 @@ createApp({
         },
 
         typingMessage(){ 
-            this.myMessage !== "" ? this.typingMsg = true : this.typingMsg = false  
+            this.myMessage !== "" ? this.typingMsg = true : this.typingMsg = false;  
+        },
+
+        dropDeleteMenuAppear(){
+            this.contactList[this.activeContact].messages.forEach(message => {
+                if(message.appear){
+                    delete message.appear;
+                }
+            })
+            this.appear = !this.appear;
+        },
+
+        deleteAllMessages(){
+            this.contactList[this.activeContact].messages.splice(0, this.contactList[this.activeContact].messages.length)
+            this.appear = false;
+        },
+
+        deleteChat(){
+            this.contactList.splice([this.activeContact], 1)
+            this.appear = false;
         }
 
     },
 
     mounted() {
-        
+        //console.log(this.contactList[this.activeContact].messages.length);
+        //console.log(this.contactList[this.activeContact]);
     }
 }).mount('#app')

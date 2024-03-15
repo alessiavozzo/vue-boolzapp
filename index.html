@@ -111,7 +111,14 @@
                         <div class="top-action d-flex">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <i class="fa-solid fa-paperclip"></i>
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                            <i class="fa-solid fa-ellipsis-vertical" @click="dropDeleteMenuAppear"></i>
+                            <!-- dropdown menu -->
+                            <div v-if="appear" class="dropdown-delete">
+                                <ul>
+                                    <li @click="deleteAllMessages()">Elimina messaggi</li>
+                                    <li @click="deleteChat()">Elimina chat</li>
+                                </ul>
+                            </div>
                         </div>
     
                     </div>

@@ -401,6 +401,7 @@ body{
     gap: 0.5rem;
     font-size: 1.8rem;
     color: var(--bool-text);
+    position: relative;
     
     & i{
         padding: 0.8rem;
@@ -414,6 +415,28 @@ body{
     & i:hover{
         background-color: var(--bool-bg-light);
         cursor: pointer;
+    }
+
+    .dropdown-delete{
+        position: absolute;
+        width: 12rem;
+        top: 3.5rem;
+        right: 1rem;
+        background-color: var(--bool-lighter);
+        padding: 0.5rem;
+        color: var(--bool-darker);
+        font-size: 1rem;
+        z-index: 5;
+        box-shadow: 0 0 7px 0 var(--bool-text);
+
+        li{
+            list-style: none;
+            padding: 0.5rem 0;
+            &:hover{
+                background-color: var(--bool-nav);
+                cursor: pointer;
+            }
+        }
     }
 }
 
