@@ -100,7 +100,8 @@
                             
                             <div class="text d-flex">
                                 <h3>{{contactList[activeContact].name}}</h3>
-                                <span>Ultimo accesso oggi alle {{formatMsgTime(contactList[activeContact].messages.at(-1).date)}}</span>
+                                <span v-if="contactList[activeContact].messages.at(-1).status === 'sent'">Sta scrivendo...</span>
+                                <span v-else>Ultimo accesso oggi alle {{formatMsgTime(contactList[activeContact].messages.at(-1).date)}}</span>
                             </div>
                         </div>
     
