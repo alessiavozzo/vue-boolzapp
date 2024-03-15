@@ -19,6 +19,8 @@ createApp({
             errorMessage: null,
             randomNumber: null,
             typingMsg: false,
+            isTypingStatus: false,
+            onlineStatus: false
         }
     },
 
@@ -41,6 +43,7 @@ createApp({
                     status: 'sent'
                 });
                 this.myMessage = "";
+                this.changeTypingStatus()
                 setTimeout(this.autoContactReply, 1000);
             }
             else {
@@ -51,7 +54,7 @@ createApp({
             }
             this.typingMessage()
         },
-
+        
         autoContactReply() {
             this.randomNumber = this.getRandomNumber(0, this.autoReplies.length - 1);
             this.contactReply = this.autoReplies[this.randomNumber];
@@ -60,6 +63,23 @@ createApp({
                 message: this.contactReply,
                 status: 'received'
             });
+            this.changeOnlineStatus()            
+        },
+
+        changeTypingStatus(){
+            this.onlineStatus = false;
+            //setta su true il v-if di "sta scrivendo"
+            this.isTypingStatus = true;
+        },
+
+        changeOnlineStatus(){
+            //setta su true il v-else-if di "online" e spegne il v-if di "sta scrivendo"
+            this.onlineStatus = true;
+            this.isTypingStatus = false;
+            //spegne "online" dopo 2 secondi
+            setTimeout(() => {
+                this.onlineStatus = false;
+            }, 2000);            
         },
 
         getRandomNumber(min, max) {
@@ -101,6 +121,6 @@ createApp({
     },
 
     mounted() {
-        //console.log(this.myMessage.length)
+        
     }
 }).mount('#app')

@@ -101,7 +101,8 @@
                             <div class="text d-flex">
                                 <h3>{{contactList[activeContact].name}}</h3>
                                 <template v-if="contactList[activeContact].messages.length > 0">
-                                    <span v-if="contactList[activeContact].messages.at(-1).status === 'sent'">Sta scrivendo...</span>
+                                    <span v-if="isTypingStatus">Sta scrivendo...</span>
+                                    <span v-else-if ="onlineStatus">Online</span>
                                     <span v-else>Ultimo accesso oggi alle {{formatMsgTime(contactList[activeContact].messages.at(-1).date)}}</span>
                                 </template>                                
                             </div>
