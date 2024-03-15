@@ -83,6 +83,7 @@ createApp({
 
         deleteMessage(msgIndex) {
             this.contactList[this.activeContact].messages.splice(msgIndex, 1);
+            console.log(msgIndex);
         },
 
         formatMsgTime(time) {

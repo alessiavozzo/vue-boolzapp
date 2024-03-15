@@ -77,9 +77,11 @@
                             <div class="text d-flex col-10 hide">
                                 <div class="name d-flex">
                                     <h3>{{contact.name}}</h3>
-                                    <span>{{formatMsgTime(contact.messages.at(-1).date)}}</span>
+                                    <span v-if="contact.messages.length > 0">{{formatMsgTime(contact.messages.at(-1).date)}}</span>
+                                    <span v-else></span>
                                 </div>
-                                <p>{{contact.messages.at(-1).message}}</p>
+                                <p v-if="contact.messages.length > 0">{{contact.messages.at(-1).message}}</p>
+                                <p v-else></p>
                             </div>
                         </div>   
                         
@@ -100,8 +102,11 @@
                             
                             <div class="text d-flex">
                                 <h3>{{contactList[activeContact].name}}</h3>
-                                <span v-if="contactList[activeContact].messages.at(-1).status === 'sent'">Sta scrivendo...</span>
-                                <span v-else>Ultimo accesso oggi alle {{formatMsgTime(contactList[activeContact].messages.at(-1).date)}}</span>
+                                <template v-if="contactList[activeContact].messages.length > 0">
+                                    <span v-if="contactList[activeContact].messages.at(-1).status === 'sent'">Sta scrivendo...</span>
+                                    <span v-else>Ultimo accesso oggi alle {{formatMsgTime(contactList[activeContact].messages.at(-1).date)}}</span>
+                                </template>
+                                <template v-else></template>
                             </div>
                         </div>
     
