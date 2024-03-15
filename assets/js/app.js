@@ -7,21 +7,32 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+
+            autoReplies:[
+                "ok",
+                "grazie",
+                "ti saluta la nonna",
+                "usciamo oggi?",
+                "ho sonno, vado a dormire",
+                "ho le febbre"
+            ],
+
+
             contactList: contactList,            
             activeContact: 0,          
             myMessage: null,
-            contactReply: "ok",
+            contactReply: "",
             searchInput: null,
             appear: false,
-            errorMessage: null,         
+            errorMessage: null, 
+            onlineMessage: null,        
         }
     },
 
     methods:{
         changeActiveChat(contact, index){
-            //console.log("Click chat", index);
-            this.activeContact = index;            
-            //console.log(this.activeContact, index);
+            this.activeContact = index;
+            //elimina i menu a tendina che ci sono aperti al cambio chat
             contact.messages.forEach(message=>{
                 if (message.appear) {
                     delete message.appear;
@@ -40,7 +51,6 @@ createApp({
                 setTimeout(this.autoContactReply, 1000);                
             }
             else{
-                //console.log("non puoi mandare un msg vuoto");
                 this.errorMessage = "Non puoi inviare un messaggio vuoto"
                 setTimeout(() => {
                     this.errorMessage = null;
@@ -49,6 +59,10 @@ createApp({
         },
 
         autoContactReply(){
+            this.autoReplies.forEach((reply,index) =>{
+                index = this.getRandomNumber(0, this.autoReplies.length-1);
+                this.contactReply = this.autoReplies[index]
+            });
             this.contactList[this.activeContact].messages.push({
                 date: this.updateMsgTime(),
                 message: this.contactReply,
@@ -56,22 +70,29 @@ createApp({
             });            
         },
 
-        searchContact(){
+        getRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min) ) + min;
+        },
+
+        /* searchContact(){
             this.contactList.forEach(contact => {
                 if(contact.name.toLowerCase().startsWith(this.searchInput.toLowerCase())){
                     contact.visible = true
-                    console.log(contact.visible);
                 }
                 else{
                     contact.visible = false
                 }
             });
+        }, */
+
+        searchContact(){
+            this.contactList.forEach(contact => {contact.name.toLowerCase().startsWith(this.searchInput.toLowerCase()) ? contact.visible = true : contact.visible = false
+                }
+            );
         },
 
-        dropMenuAppear(singleMessage, msgIndex){ 
-            //console.log(singleMessage); 
+        dropMenuAppear(singleMessage, msgIndex){
             this.contactList[this.activeContact].messages.forEach((message,index)=> {
-                //console.log(singleMessage, msgIndex, index);                
                 if (message.appear && msgIndex !== index) {
                     delete message.appear;
                 }
@@ -79,11 +100,7 @@ createApp({
             singleMessage.appear = !singleMessage.appear;
         },
 
-        deleteMessage(singleMessage, msgIndex){
-            //console.log(msgIndex);
-            //console.log("delete");
-            //console.log(this.contactList[this.activeContact].messages[msgIndex]);
-
+        deleteMessage(msgIndex){
             this.contactList[this.activeContact].messages.splice(msgIndex, 1);
                 
         },
@@ -98,15 +115,6 @@ createApp({
     },
 
     mounted(){
-        //console.log(this.contactList[0].messages[0].message);
-        //console.log(this.contactList[0].messages[0].status === "sent");    
-        //console.log(this.contactList[this.activeContact].name.includes(this.searchInput));
-        //this.lastMessage = this.contactList[this.activeContact].messages.length - 1
-        //console.log(this.lastMessage);    
-        //console.log(this.contactList[0].messages.length - 1);        
-        //console.log(this.contactList[4].messages.length-1); 
-        //console.log(this.contactList);
-          
-       
+           
     }
 }).mount('#app')
