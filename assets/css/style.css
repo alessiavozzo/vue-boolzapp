@@ -1,6 +1,6 @@
 /* #region reset */
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -10,7 +10,7 @@
 
 /* #region color palette */
 
-:root{
+:root {
     --bool-lighter: rgba(255, 255, 255, 1);
     --bool-darker: black;
     --bool-bg-dark: rgba(0, 150, 136, 1);
@@ -57,7 +57,7 @@
 
 /* #region common rules */
 
-body{
+body {
     font-family: 'Lato', sans-serif;
     background-image: linear-gradient(var(--bool-bg-dark) 150px, 150px, var(--bool-bg-light));
     height: 100vh;
@@ -65,12 +65,16 @@ body{
     font-size: 1.1rem;
 }
 
-.row{
+#boolzApp {
+    height: 100%;
+}
+
+.row {
     display: flex;
     width: 100%;
 }
 
-.app-container{
+.app-container {
     width: 100%;
     height: 95%;
     margin: auto;
@@ -78,13 +82,13 @@ body{
     max-width: 1920px;
 }
 
-#app{
+#app {
     width: 90%;
     margin: auto;
     height: 100%;
     max-width: 1200px;
+    border: 1px solid grey;
 }
-
 
 
 /* #endregion common rules */
@@ -93,50 +97,51 @@ body{
 
 /* #region utility */
 
-.d-flex{
+.d-flex {
     display: flex;
 }
 
-.d-none{
+.d-none {
     display: none;
 }
-.d-block{
+
+.d-block {
     display: block;
 }
 
-.col-12{
+.col-12 {
     width: 100%;
 }
 
-.col-11{
+.col-11 {
     width: calc((100% / 12) * 11);
 }
 
-.col-10{
+.col-10 {
     width: calc((100% / 12) * 10);
 }
 
-.col-9{
+.col-9 {
     width: calc((100% / 12) * 9);
 }
 
-.col-8{
+.col-8 {
     width: calc((100% / 12) * 8);
 }
 
-.col-4{
+.col-4 {
     width: calc((100% / 12) * 4);
 }
 
-.col-3{
+.col-3 {
     width: calc((100% / 12) * 3);
 }
 
-.col-2{
+.col-2 {
     width: calc((100% / 12) * 2);
 }
 
-.col-1{
+.col-1 {
     width: calc(100% / 12);
 }
 
@@ -146,75 +151,75 @@ body{
 
 /* #region sidebar */
 
-#sidebar{
+#sidebar {
     flex-direction: column;
-    height: 100%; 
+    height: 100%;
 
-    & > *:not(.search-bar, .contact-list){
+    &>*:not(.search-bar, .contact-list) {
         padding: 0.8rem;
     }
 }
 
-    /* sidebar header */
+/* sidebar header */
 
-.side-header{
+.side-header {
     justify-content: space-between;
     align-items: center;
-    background-color: var(--bool-nav);       
+    background-color: var(--bool-nav);
     border-right: 1px solid var(--bool-text);
     height: 100px;
     min-height: 100px;
 
-    & .user{
+    & .user {
         width: 60px;
         height: 60px;
 
-        &:hover{
+        &:hover {
             cursor: pointer;
         }
     }
 
-    & img{
+    & img {
         width: 100%;
         height: 100%;
         aspect-ratio: 1/1;
         border-radius: 50%;
     }
 
-    & .action{
+    & .action {
         gap: 0.5rem;
 
-        & > i{
+        &>i {
             font-size: 1.8rem;
             color: var(--bool-text);
             padding: 0.8rem;
             border-radius: 50%;
 
-            &:hover{
+            &:hover {
                 cursor: pointer;
-                background-color: var(--bool-bg-light);               
-                
+                background-color: var(--bool-bg-light);
+
             }
         }
 
-        & .fa-ellipsis-vertical::before{
+        & .fa-ellipsis-vertical::before {
             padding: 0 0.7rem;
         }
     }
 }
 
-    /* sidebar notif */
+/* sidebar notif */
 
-.notifications{
+.notifications {
     background-color: var(--bool-notif);
     align-items: center;
 
-    & .alert{
+    & .alert {
         aspect-ratio: 1/1;
         border-radius: 50%;
         background-color: var(--bool-lighter);
 
-        & i{
+        & i {
             color: var(--bool-notif);
             font-size: 2rem;
             padding: 0.7rem;
@@ -223,12 +228,12 @@ body{
         }
     }
 
-    & .text{
+    & .text {
         flex-direction: column;
         padding-left: 0.8rem;
         gap: 0.3rem;
 
-        & a{
+        & a {
             color: grey;
             font-size: 0.9rem;
         }
@@ -236,94 +241,127 @@ body{
 }
 
 
-    /* searchbar */
+/* searchbar */
 
-.search-bar{
+.search-bar {
     background-color: var(--bool-nav);
-    padding: 0.5rem;       
+    padding: 0.5rem;
     border-right: 1px solid var(--bool-text);
 
-    & .search{
+    & .search {
         background-color: var(--bool-lighter);
         padding: 0.5rem;
         gap: 1rem;
 
-        & > i{
+        &>i {
             font-size: 1.3rem;
             color: var(--bool-text);
         }
 
-        & input{
+        & input {
             border: none;
             width: 100%;
 
-            &:focus{
+            &:focus {
                 outline: none;
             }
         }
     }
 }
 
-.search-bar .search > .fa-arrow-down{    
+.search-bar .search>.fa-arrow-down {
     color: var(--bool-bg-dark);
-    transition: all 0.8s;    
+    transition: all 0.8s;
     opacity: 0;
     height: 0;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
-.search:has(input:focus) .fa-magnifying-glass{
+.search:has(input:focus) .fa-magnifying-glass {
     display: none;
 }
 
-.search:has(input:focus) .fa-arrow-down{
+.search:has(input:focus) .fa-arrow-down {
     opacity: 1;
     height: auto;
-    transform: rotate(90deg);    
+    transform: rotate(90deg);
+}
+
+.start-new-chat {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    >.no-chat {
+        padding: 0.8rem;
+        border-bottom: 1px solid var(--bool-text);
+    }
+
+    >.new-contact {
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        align-items: center;
+        margin-top: 2rem;
+
+        >.contact-pic {
+            width: 100px;
+            height: 100px;
+        }
+
+        >button {
+            background-color: var(--bool-bg-dark);
+            color: var(--bool-lighter);
+            padding: 0.5rem;
+            border: none;
+        }
+    }
+
 }
 
 
-    /* contact list */
+/* contact list */
 
-.contact-list{
+.contact-list {
     height: 100%;
     background-color: var(--bool-lighter);
     border-right: 1px solid var(--bool-text);
     overflow-y: auto;
 
-    & .text{
-    width: 100%;
+    & .text {
+        width: 100%;
     }
 
-    & .name{
-    justify-content: space-between;
+    & .name {
+        justify-content: space-between;
     }
 }
 
-.contact{
+.contact {
     padding: 0.8rem;
     border-bottom: 1px solid var(--bool-text);
     align-items: center;
 
-    & .contact-pic > img{
+    & .contact-pic>img {
         width: 100%;
         height: 100%;
         aspect-ratio: 1/1;
-        border-radius: 50%;    
+        border-radius: 50%;
     }
 
-    & .text{
+    & .text {
         padding-left: 0.8rem;
         flex-direction: column;
         gap: 0.3rem;
 
-        & span, p{
+        & span,
+        p {
             font-size: 0.9rem;
             color: var(--bool-text)
         }
     }
 
-    &:hover{
+    &:hover {
         background-color: var(--bool-nav);
         cursor: pointer;
     }
@@ -337,15 +375,21 @@ body{
 
 /* #region main-app */
 
-#main-app{
+#main-app {
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-    /* topbar */
+.default-msg {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
 
-.top-bar{    
+/* topbar */
+
+.top-bar {
     background-color: var(--bool-nav);
     justify-content: space-between;
     position: sticky;
@@ -357,39 +401,39 @@ body{
     height: 100px;
     min-height: 100px;
 
-    & .text{
+    & .text {
         flex-direction: column;
         padding-left: 0.8rem;
-        
-        & > span{
+
+        &>span {
             font-size: 0.9rem;
             color: var(--bool-text);
         }
 
-        & h3{
+        & h3 {
             padding-bottom: 0.3rem;
         }
-    
+
     }
 }
 
-.chat-contact{
+.chat-contact {
     align-items: center;
     height: 100%;
     width: 100%;
 }
 
 
-.contact-pic{
+.contact-pic {
 
     width: 60px;
     height: 60px;
 
-    &:hover{
+    &:hover {
         cursor: pointer;
     }
 
-    & img{
+    & img {
         object-fit: contain;
         width: 100%;
         height: 100%;
@@ -397,27 +441,27 @@ body{
     }
 }
 
-.top-action{
+.top-action {
     gap: 0.5rem;
     font-size: 1.8rem;
     color: var(--bool-text);
     position: relative;
-    
-    & i{
+
+    & i {
         padding: 0.8rem;
         border-radius: 50%;
     }
 
-    & .fa-ellipsis-vertical::before{
+    & .fa-ellipsis-vertical::before {
         padding: 0 0.7rem;
     }
 
-    & i:hover{
+    & i:hover {
         background-color: var(--bool-bg-light);
         cursor: pointer;
     }
 
-    .dropdown-delete{
+    .dropdown-delete {
         position: absolute;
         width: 12rem;
         top: 3.5rem;
@@ -429,10 +473,11 @@ body{
         z-index: 5;
         box-shadow: 0 0 7px 0 var(--bool-text);
 
-        li{
+        li {
             list-style: none;
             padding: 0.5rem 0;
-            &:hover{
+
+            &:hover {
                 background-color: var(--bool-nav);
                 cursor: pointer;
             }
@@ -440,15 +485,16 @@ body{
     }
 }
 
-    /* chat */
+/* chat */
 
-.chat{
+.chat {
     height: 100%;
     background-image: url(../img/mine.jpg);
     overflow-y: auto;
     padding: 2rem 4rem;
 
-    & .my-msg, .contact-msg{
+    & .my-msg,
+    .contact-msg {
         border-radius: 1.5rem;
         padding: 1.2rem;
         position: relative;
@@ -456,22 +502,22 @@ body{
 
 }
 
-.msg{
+.msg {
     gap: 1rem;
     flex-direction: column;
 
-    & .my-msg{
+    & .my-msg {
         align-self: flex-end;
         background-color: var(--bool-primary);
         flex-wrap: wrap;
     }
 
-    & .contact-msg{
+    & .contact-msg {
         align-self: flex-start;
         background-color: var(--bool-lighter);
-    }    
+    }
 
-    & span{
+    & span {
         color: var(--bool-text);
         text-align: right;
         font-size: 0.9rem;
@@ -480,12 +526,12 @@ body{
         bottom: 5%;
     }
 
-    & .chevron{
+    & .chevron {
         text-align: right;
         color: var(--bool-text);
         position: relative;
 
-        &:hover{
+        &:hover {
             cursor: pointer;
         }
 
@@ -495,7 +541,7 @@ body{
         } */
     }
 
-    & .drop{
+    & .drop {
         position: absolute;
         width: 12rem;
         top: 20px;
@@ -507,17 +553,17 @@ body{
         font-size: 1rem;
         z-index: 5;
         box-shadow: 0 0 7px 0 var(--bool-text);
-        
-    }       
-    
 
-    & ul{
+    }
+
+
+    & ul {
         list-style: none;
 
-        & li{
+        & li {
             padding: 0.5rem 0;
 
-            &:hover{
+            &:hover {
                 background-color: var(--bool-nav);
             }
         }
@@ -525,9 +571,9 @@ body{
 
 }
 
-    /* bottombar */
+/* bottombar */
 
-.bottom-bar{
+.bottom-bar {
     background-color: var(--bool-nav);
     justify-content: space-around;
     z-index: 10;
@@ -538,28 +584,28 @@ body{
     height: 80px;
     position: relative;
 
-    & > i{
+    &>i {
         font-size: 1.8rem;
         color: grey;
         text-align: center;
 
-        &:hover{
+        &:hover {
             color: var(--bool-bg-dark);
             cursor: pointer;
         }
     }
 
-    & input{
+    & input {
         padding: 0.8rem;
         border: none;
         border-radius: 0.5rem;
 
-        &:focus{
+        &:focus {
             outline: none;
         }
     }
 
-    >.error-message{
+    >.error-message {
         position: absolute;
         display: block;
         width: 30%;
@@ -579,6 +625,7 @@ body{
 ::-webkit-scrollbar {
     width: 1px;
 }
+
 ::-webkit-scrollbar-thumb {
     background: var(--bool-text);
 }
@@ -588,79 +635,79 @@ body{
 
 /* #region media queries */
 
-    /* 541-991 */
+/* 541-991 */
 
 @media screen and (max-width: 991px) {
 
-    .app-container{
+    .app-container {
         height: 100vh;
-        margin: 0;        
+        margin: 0;
     }
-    
-    #app{
+
+    #app {
         width: 100%;
         height: 100%;
         margin: 0;
     }
-    
-    .col-md-1{
+
+    .col-md-1 {
         width: calc(100% / 12);
     }
 
-    .col-md-11{
+    .col-md-11 {
         width: calc((100% / 12) * 11);
     }
 
-    .col-md-12{
+    .col-md-12 {
         width: 100%;
     }
-    
 
-    .hide{
+
+    .hide {
         display: none;
     }
 
-    #sidebar{
+    #sidebar {
         width: 100px;
     }
 
-    #main-app{
+    #main-app {
         width: 100%;
     }
 
-    .chat{
+    .chat {
         padding: 2rem 2rem;
     }
 
-    
+
 }
 
-    /* 0-540 */
+/* 0-540 */
 
 
 @media screen and (max-width: 540px) {
-    
-    .col-sm-12{
+
+    .col-sm-12 {
         width: 100%;
     }
 
-    .col-sm-9{
+    .col-sm-9 {
         width: calc((100% / 12) * 9);
     }
 
-    #sidebar{
+    #sidebar {
         display: none;
     }
 
-    .bottom-bar > i{
+    .bottom-bar>i {
         display: none;
     }
 
-    .bottom-bar{
+    .bottom-bar {
         padding: 0.8rem 1.5rem;
     }
 
-    .top-action{
+    .top-action {
         display: none;
     }
 }
