@@ -537,12 +537,34 @@ body {
     background-image: url(../img/mine.jpg);
     overflow-y: auto;
     padding: 2rem 4rem;
+    position: relative;
 
     & .my-msg,
     .contact-msg {
         border-radius: 1.5rem;
         padding: 1.2rem;
         position: relative;
+    }
+
+    .fontsize-controls{
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        
+        >button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1.2rem;
+            height: 1.2rem;        
+            padding: 0.8rem;
+            border-radius: 50%;
+            border: 1px solid var(--bool-text);
+            cursor: pointer;
+        }
     }
 
 }
@@ -869,7 +891,11 @@ body {
         li:hover{
             background-color: var(--bool-darkmode-msg)
         }
-    }  
+    } 
+    & .fontsize-controls > button{
+        background-color: var(--bool-darkmode-hover);
+        color: var(--bool-lighter);
+    } 
     & .bottom-bar{
         background-color: var(--bool-darkmode-topbar);
         i{

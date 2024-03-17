@@ -24,7 +24,8 @@ createApp({
             clickContact: false,
             contactVisibility: true,
             splashPage: true,
-            switchDark: false
+            switchDark: false,
+            fontSize: 1.1
         }
     },
 
@@ -182,7 +183,9 @@ createApp({
 
         darkMode(){    
             this.switchDark = !this.switchDark;            
-        }
+        },
+
+        
     },    
 
     mounted() {
