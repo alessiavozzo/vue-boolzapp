@@ -23,6 +23,7 @@ createApp({
             onlineStatus: false,
             clickContact: false,
             contactVisibility: true,
+            splashPage: true
         }
     },
 
@@ -114,8 +115,8 @@ createApp({
         startNewChat() {
             this.contactList.unshift(
                 {
-                    name: this.searchInput,
-                    avatar: './assets/img/avatar_8.jpg',
+                    name: this.upperCaseName(this.searchInput),
+                    avatar: 'https://img.wattpad.com/d8b3490b62b85f4b4e198e3f00d77db2430c5ed8/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f52765965323633644567673937673d3d2d3838313433393137352e313630643134316430303565353338323634383536363233333632312e6a7067?s=fit&w=720&h=720',
                     visible: true,
                     messages: []
                 }
@@ -170,14 +171,16 @@ createApp({
         deleteChat() {
             this.contactList.splice([this.activeContact], 1)
             this.appear = false;
+        },
+
+        closeSplashPage(){
+            setTimeout(() => {
+                this.splashPage = false;
+            }, 1000);
         }
-
-
     },
 
     mounted() {
-        //console.log(this.contactList[this.activeContact].messages.length);
-        //console.log(this.contactList[this.activeContact]);
-        //console.log(this.contactList[this.activeContact]);
+        this.closeSplashPage()
     }
 }).mount('#boolzApp')

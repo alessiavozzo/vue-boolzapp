@@ -22,7 +22,12 @@
 
     <div id="boolzApp">
 
-        <div class="app-container">
+        <div id="splash-page" v-if="splashPage">
+            <i class="fa-solid fa-radiation"></i>
+            <h2>BoolzApp è troppo figo</h2>
+        </div>
+
+        <div class="app-container" v-else>
             <div id="app" class="row">
 
                 <!-- sidebar -->
@@ -92,7 +97,7 @@
                             <div class="no-chat">Nessuna chat trovata.</div>
                             <div class="new-contact">
                                 <div class="contact-pic col-2 col-md-12">
-                                    <img src="./assets/img/avatar_4.jpg">
+                                    <img src="https://www.emanuelatosti.it/wp-content/uploads/2015/05/Punto_interrogativo.png":src="contactList[activeContact].avatar">
                                 </div>
     
                                 <div class="name d-flex">
