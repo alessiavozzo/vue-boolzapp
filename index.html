@@ -31,14 +31,14 @@
             <div id="app" class="row">
 
                 <!-- sidebar -->
-                <div id="sidebar" class="d-flex col-4">
+                <div id="sidebar" class="d-flex col-4" :class="activeSide ? 'w-100' : 'sm-hide'">
 
                     <!-- sidebar header -->
                     <div class="side-header row col-12">
                         <div class="user col-md-12">
                             <img src="./assets/img/avatar_io.jpg" alt="profile-pic">
                         </div>
-                        <div class="action d-flex hide">
+                        <div class="action d-flex">
                             <i class="fa-solid fa-lightbulb" @click="darkMode()"></i>
                             <i class="fa-solid fa-circle-notch"></i>
                             <i class="fa-solid fa-message"></i>
@@ -78,13 +78,13 @@
                     <div class="contact-list col-12">
 
                         <!-- contact1 -->
-                        <div class="contact" v-for="(contact,index) in contactList"
-                            @click="changeActiveChat(contact, index)"
+                        <div class="contact" v-for="(contact,index) in contactList" 
+                            @click="changeActiveChat(contact, index), switchActiveSide()"
                             :class="contact.visible === false ? 'd-none' : 'd-flex'">
-                            <div class="contact-pic col-2 col-md-12">
+                            <div class="contact-pic col-2 col-md-12 col-sm-2">
                                 <img :src="contact.avatar" :alt="contact.name">
                             </div>
-                            <div class="text d-flex col-10 hide">
+                            <div class="text d-flex col-10 hide sm-show">
                                 <div class="name d-flex">
                                     <h3>{{contact.name}}</h3>
                                     <span
@@ -113,20 +113,19 @@
 
                 </div>
 
-                <div id="main-app" class="default-page col-8 col-sm-12" v-if="!clickContact">
+                <div class="default-page col-8 col-sm-12" :class="activeSide===false ? 'w-100' : 'sm-hide'" v-if="!clickContact">
                     <!-- chat -->
-                    <div class="chat default-msg">
+                    <div class="chat default-msg sm-hide">
                         <div class="msg row">
                             <h3>Clicca un contatto per iniziare una conversazione</h3>
                         </div>
                     </div>
                 </div>
 
-                <div id="main-app" class="col-8 col-sm-12" v-else>
+                <div id="main-app" class="col-8 col-sm-12" :class="activeSide===false ? 'w-100' : 'sm-hide'" v-else>
 
                     <!-- topbar -->
                     <div class="top-bar d-flex">
-
                         <div class="chat-contact d-flex">
                             <div class="contact-pic">
                                 <img :src="contactList[activeContact].avatar" alt="">
@@ -146,6 +145,7 @@
                         <div class="top-action d-flex">                            
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-arrow-left" @click="switchActiveSide()"></i>
                             <i class="fa-solid fa-ellipsis-vertical" @click="dropDeleteMenuAppear()"></i>
                             <!-- dropdown menu -->
                             <div v-if="appear" class="dropdown-delete">

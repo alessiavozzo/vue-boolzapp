@@ -25,7 +25,8 @@ createApp({
             contactVisibility: true,
             splashPage: true,
             switchDark: false,
-            fontSize: 1.1
+            fontSize: 1.1,
+            activeSide: true
         }
     },
 
@@ -185,10 +186,14 @@ createApp({
             this.switchDark = !this.switchDark;            
         },
 
+        switchActiveSide(){
+            this.activeSide = !this.activeSide
+        }
         
     },    
 
     mounted() {
-        this.closeSplashPage()   
+        this.closeSplashPage()  
+        
     }
 }).mount('#boolzApp')
