@@ -20,9 +20,9 @@
 
 <body>
 
-    <div id="boolzApp">
-
-        <div id="splash-page" v-if="splashPage">
+    <div id="boolzApp">  
+        <div class="wrapper" :class="{dark: switchDark}">
+            <div id="splash-page" v-if="splashPage">
             <i class="fa-solid fa-radiation"></i>
             <h2>BoolzApp è troppo figo</h2>
         </div>
@@ -39,6 +39,7 @@
                             <img src="./assets/img/avatar_io.jpg" alt="profile-pic">
                         </div>
                         <div class="action d-flex hide">
+                            <i class="fa-solid fa-lightbulb" @click="darkMode()"></i>
                             <i class="fa-solid fa-circle-notch"></i>
                             <i class="fa-solid fa-message"></i>
                             <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -145,7 +146,7 @@
                         <div class="top-action d-flex">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <i class="fa-solid fa-paperclip"></i>
-                            <i class="fa-solid fa-ellipsis-vertical" @click="dropDeleteMenuAppear"></i>
+                            <i class="fa-solid fa-ellipsis-vertical" @click="dropDeleteMenuAppear()"></i>
                             <!-- dropdown menu -->
                             <div v-if="appear" class="dropdown-delete">
                                 <ul>
@@ -207,6 +208,8 @@
 
             </div>
         </div>
+        </div>      
+        
     </div>
 
 

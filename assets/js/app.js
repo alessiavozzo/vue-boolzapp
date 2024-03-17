@@ -23,7 +23,8 @@ createApp({
             onlineStatus: false,
             clickContact: false,
             contactVisibility: true,
-            splashPage: true
+            splashPage: true,
+            switchDark: false
         }
     },
 
@@ -177,10 +178,14 @@ createApp({
             setTimeout(() => {
                 this.splashPage = false;
             }, 1000);
+        },
+
+        darkMode(){    
+            this.switchDark = !this.switchDark;            
         }
-    },
+    },    
 
     mounted() {
-        this.closeSplashPage()
+        this.closeSplashPage()   
     }
 }).mount('#boolzApp')

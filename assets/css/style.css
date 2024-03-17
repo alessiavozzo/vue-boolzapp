@@ -19,6 +19,15 @@
     --bool-text: rgba(177, 177, 177, 1);
     --bool-nav: rgba(234, 234, 234, 1);
     --bool-notif: rgba(142, 218, 252, 1);
+    --bool-darkmode-bg: #0c1317FF;
+    --bool-darkmode-topbar: #202c33FF;
+    --bool-darkmode-msg: #111b21FF;
+    --bool-darkmode-notif: #182229FF;
+    --bool-darkmode-hover: #2a3942;
+    --bool-darkmode-icons: #8696a0;
+
+
+
 }
 
 
@@ -69,6 +78,12 @@ body {
     height: 100%;
 }
 
+.wrapper{
+    height: 100%;    
+    display: flex;
+    align-items: center;
+}
+
 .row {
     display: flex;
     width: 100%;
@@ -78,7 +93,6 @@ body {
     width: 100%;
     height: 95%;
     margin: auto;
-    margin-top: 1.5rem;
     max-width: 1920px;
 }
 
@@ -90,7 +104,7 @@ body {
     border: 1px solid grey;
 }
 
-#splash-page{
+#splash-page {
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -101,7 +115,7 @@ body {
     flex-direction: column;
     gap: 2rem;
 
-    >i{
+    >i {
         font-size: 4rem;
         background-color: var(--bool-lighter);
         padding: 1rem;
@@ -110,7 +124,7 @@ body {
         border-radius: 50%;
     }
 
-    >h2{
+    >h2 {
         color: var(--bool-lighter);
     }
 }
@@ -333,7 +347,7 @@ body {
             width: 100px;
             height: 100px;
 
-            >img{
+            >img {
                 border: 1px solid black;
                 width: 100px;
                 height: 100px;
@@ -744,3 +758,128 @@ body {
 }
 
 /* #endregion media queries */
+
+/* #region dark mode */
+.dark {
+    background-color: var(--bool-darkmode-bg);
+
+    & .contact-list{
+        background-color: var(--bool-darkmode-msg);
+        .no-chat, .new-contact{
+            color: var(--bool-text);
+        }
+    }
+
+    & .contact {
+        border-bottom: 1px solid var(--bool-darkmode-topbar);
+
+        h3 {
+            color: var(--bool-lighter);
+        }
+
+        &:hover {
+            background-color: var(--bool-darkmode-hover);
+        }
+    }
+
+    & .search-bar {
+        background-color: var(--bool-darkmode-msg);
+
+        >.search {
+            background-color: var(--bool-darkmode-topbar);
+
+            >i {
+                color: var(--bool-darkmode-icons);
+            }
+
+            >input {
+                background-color: var(--bool-darkmode-topbar);
+                color: var(--bool-text);
+            }
+        }
+    }
+
+    & .notifications {
+        background-color: var(--bool-darkmode-notif);
+        border-right: 1px solid var(--bool-text);
+
+        .alert {
+            background-color: var(--bool-notif);
+
+            >i {
+                color: var(--bool-darkmode-msg);
+            }
+        }
+
+        .text>span {
+            color: var(--bool-lighter);
+        }
+    }
+
+    & .side-header {
+        background-color: var(--bool-darkmode-topbar);
+
+        >.action>i {
+            color: var(--bool-darkmode-icons);
+
+            &:hover {
+                background-color: var(--bool-darkmode-hover);
+            }
+        }
+    }
+
+    & .chat {
+        background-image: url(https://i.pinimg.com/originals/87/93/b7/8793b7f3009c87baf350de82a5f72423.jpg);
+
+        &.default-msg h3 {
+            color: var(--bool-lighter)
+        }
+    }
+
+    & .top-bar {
+        background-color: var(--bool-darkmode-topbar);
+
+        h3 {
+            color: var(--bool-lighter);
+        }
+
+        i {
+            color: var(--bool-darkmode-icons);
+
+            &:hover {
+                background-color: var(--bool-darkmode-hover);
+            }
+        }
+    }
+
+    & .my-msg {
+        background-color: var(--bool-bg-dark);
+        color: var(--bool-lighter);
+    }
+
+    & .contact-msg {
+        background-color: var(--bool-darkmode-topbar);
+        color: var(--bool-lighter);
+    }
+
+    & .dropdown-delete,
+    & .drop {
+        background-color: var(--bool-darkmode-topbar);
+        color: var(--bool-lighter);
+        li:hover{
+            background-color: var(--bool-darkmode-msg)
+        }
+    }  
+    & .bottom-bar{
+        background-color: var(--bool-darkmode-topbar);
+        i{
+            color: var(--bool-darkmode-icons);
+        }
+        input{
+            background-color: var(--bool-darkmode-hover);
+            color: var(--bool-text);
+        }
+    }  
+}
+/* #endregion dark mode */
+
