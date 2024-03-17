@@ -62,7 +62,8 @@ createApp({
                     this.errorMessage = null;
                 }, 1500);
             }
-            this.typingMessage()
+            this.$nextTick(this.autoScrollDown);
+            this.typingMessage();
         },
 
         autoContactReply() {
@@ -73,6 +74,7 @@ createApp({
                 message: this.contactReply,
                 status: 'received'
             });
+            this.$nextTick(this.autoScrollDown);
             this.changeOnlineStatus();
         },
 
@@ -188,12 +190,15 @@ createApp({
 
         switchActiveSide(){
             this.activeSide = !this.activeSide
+        },
+
+        autoScrollDown(){
+            this.$refs.chatWindow.scrollTop = this.$refs.chatWindow.scrollHeight;
         }
         
     },    
 
     mounted() {
-        this.closeSplashPage()  
-        
+        this.closeSplashPage()
     }
 }).mount('#boolzApp')
