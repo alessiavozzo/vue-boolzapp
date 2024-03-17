@@ -22,8 +22,7 @@ createApp({
             isTypingStatus: false,
             onlineStatus: false,
             clickContact: false,
-            contactVisibility: false,
-            endWhile: false,
+            contactVisibility: true,
         }
     },
 
@@ -70,7 +69,7 @@ createApp({
                 message: this.contactReply,
                 status: 'received'
             });
-            this.changeOnlineStatus()
+            this.changeOnlineStatus();
         },
 
         changeTypingStatus() {
@@ -122,7 +121,8 @@ createApp({
                 }
             )
             this.searchInput = "";
-            this.searchContact()
+            this.searchContact();
+            this.changeActiveChat(this.contactList[this.activeContact], 0);         
         },
 
         dropMenuAppear(singleMessage, msgIndex) {
